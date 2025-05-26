@@ -1,3 +1,4 @@
+import { cartStore } from '../context/store';
 import type { dataType } from '../pages/Home';
 
 type ProductCardType = {
@@ -5,6 +6,12 @@ type ProductCardType = {
 };
 
 const ProductCard = ({ products }: ProductCardType) => {
+	const addItems = cartStore((state) => state.addItems);
+
+	const handleCart = (product: dataType) => {
+		addItems(product);
+	};
+
 	return products.map((product) => {
 		const { description, id, inStock, name, price } = product;
 		return (
@@ -22,7 +29,10 @@ const ProductCard = ({ products }: ProductCardType) => {
 					<p className="text-gray-600 text-sm mb-4">{description}</p>
 					<div className="flex items-center justify-between">
 						<span className="font-bold text-lg">{price}</span>
-						<button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+						<button
+							className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+							onClick={() => handleCart(product)}
+						>
 							Buy Now
 						</button>
 					</div>

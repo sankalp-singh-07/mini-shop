@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Product from './pages/Product';
 import Header from './pages/Header';
+import CartBox from './components/CartBox';
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 					<Route path="*" element={<NotFound />} />
 				</Route>
 			</Routes>
+			<CartBox />
 		</>
 	);
 }

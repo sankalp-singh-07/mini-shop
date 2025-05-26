@@ -9,6 +9,7 @@ export type dataType = {
 	image: string;
 	price: number;
 	inStock: boolean;
+	quantity: number;
 };
 
 const Home = () => {

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import api from '../services/api';
+import ProductCard from '../components/ProductCard';
 
 export type dataType = {
 	id: number;
@@ -22,9 +23,9 @@ const Home = () => {
 		fetchProduct();
 	}, []);
 
-	console.log(data);
+	// console.log(data);
 
-	return <div>Home</div>;
+	return <ProductCard products={data} />;
 };
 
 export default Home;

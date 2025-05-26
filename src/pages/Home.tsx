@@ -13,6 +13,7 @@ export type dataType = {
 
 const Home = () => {
 	const [data, setData] = useState<dataType[]>([]);
+	const [loading, setLoading] = useState<boolean>(false);
 
 	const fetchProduct = async () => {
 		const products = await api();
@@ -20,10 +21,18 @@ const Home = () => {
 	};
 
 	useEffect(() => {
-		fetchProduct();
+		try {
+			setLoading(true);
+			fetchProduct();
+		} catch (error) {
+			console.log(error);
+		} finally {
+			setLoading(false);
+		}
 	}, []);
 
-	// console.log(data);
+	if (loading)
+		return <p className="text-center font-normal text-sm">Loading</p>;
 
 	return <ProductCard products={data} />;
 };

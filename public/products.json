@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Classic T-Shirt",
+    "description": "Soft and comfortable",
+    "price": 19.99,
+    "inStock": true,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 2,
+    "name": "Leather Wallet",
+    "description": "Slim and stylish",
+    "price": 29.99,
+    "inStock": false,
+    "image": "https://via.placeholder.com/150"
+  }
+]

@@ -1,5 +1,6 @@
 import { cartStore } from '../context/store';
 import type { dataType } from '../pages/Home';
+import { Link } from 'react-router-dom';
 
 type ProductCardType = {
 	products: dataType[];
@@ -37,9 +38,12 @@ const ProductCard = ({ products }: ProductCardType) => {
 								Buy Now
 							</button>
 						)}
-						<button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+						<Link
+							to={`product/${product.id}`}
+							className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+						>
 							Detail
-						</button>
+						</Link>
 					</div>
 				</div>
 			</div>

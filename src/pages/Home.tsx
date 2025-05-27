@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import api from '../services/api';
 import ProductCard from '../components/ProductCard';
+import CartBox from '../components/CartBox';
 
 export type dataType = {
 	id: number;
@@ -35,7 +36,12 @@ const Home = () => {
 	if (loading)
 		return <p className="text-center font-normal text-sm">Loading</p>;
 
-	return <ProductCard products={data} />;
+	return (
+		<>
+			<ProductCard products={data} />
+			<CartBox />
+		</>
+	);
 };
 
 export default Home;
